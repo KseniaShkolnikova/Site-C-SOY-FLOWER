@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row g-2">
+    <div style="margin-top:50px; margin-bottom:50px" class="col-md-3">
+        <div class="card" style="width: 18rem; background-color: #911300">
+            <div>
+                <a asp-action="Information">
+                    <img src="@Url.Content("~/lib/images/pngwing.com (2).png")" class="card-img-top" alt="...">
+                </a>
+            </div>            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="color:white;  background-color: #911300">Мия Баки</li>
+                <li class="list-group-item" style=" color:white; background-color: #911300">443778 руб</li>
+            </ul>
+            <div class="card-body">
+                <button class="btn btn-sm btn-dark">Удалить из корзины</button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:50px; margin-bottom:50px" class="col-md-3">
+        <div class="card" style="width: 18rem; background-color: #911300">
+            <div>
+                <a asp-action="Information">
+                    <img src="@Url.Content("~/lib/images/pngwing.com (2).png")" class="card-img-top" alt="...">
+                </a>
+            </div>            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="color:white;  background-color: #911300">Мия Баки</li>
+                <li class="list-group-item" style=" color:white; background-color: #911300">443778 руб</li>
+            </ul>
+            <div class="card-body">
+                <button class="btn btn-sm btn-dark">Удалить из корзины</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3" style="position: fixed; bottom: 60px;">
+    <div class="col-md-8 text-start themed-grid-col">Итого: 100000000 руб</div>
+    <div class="col-md-4 text-end themed-grid-col">
+        <button class="btn btn-sm" style="background-color: #911300; color: white;margin-left:550px"><a asp-action="Payment" style="text-decoration:none; background-color: #911300; color: white;">Перейти к оформлению</a></button>
+    </div>
+</div>
+

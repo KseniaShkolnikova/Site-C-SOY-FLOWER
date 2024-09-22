@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pervieproekt</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Pervieproekt.styles.css" asp-append-version="true" />
+</head>
+<body style="background-color:black; color: white;">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color:#911300; color: white; border:none">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" style="color: white;">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4" style="color: white;font-size:20px">Soy flower</span>
+        </a>
+
+        <ul style="font-size:18px" class="nav nav-pills">
+            <li class="nav-item"><a asp-action="Index" class="nav-link" style="color: white;">Главнвя</a></li>
+            <li class="nav-item"><a asp-action="Catalog" class="nav-link" style="color: white;">Каталог</a></li>
+            <li class="nav-item"><a asp-action="Cart" class="nav-link" style="color: white;">Корзина</a></li>
+        </ul>
+    </header>
+    <div style="background-color:black" class="container">
+        <main style="background-color:black" role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer style="background-color: #911300; color: white" class="border-top footer text-muted">
+        <div style="background-color: #911300; color: white" class="container">
+            &copy; 2024 - SushiStire.NET - Privacy
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
