@@ -16,9 +16,12 @@
         </a>
 
         <ul style="font-size:18px" class="nav nav-pills">
-            <li class="nav-item"><a asp-action="Index" class="nav-link" style="color: white;">Главнвя</a></li>
-            <li class="nav-item"><a asp-action="Catalog" class="nav-link" style="color: white;">Каталог</a></li>
-            <li class="nav-item"><a asp-action="Cart" class="nav-link" style="color: white;">Корзина</a></li>
+            <li class="nav-item"><a asp-action="Index" asp-controller="Home" class="nav-link" style="color: white;">Главнвя</a></li>
+            <li class="nav-item"><a asp-controller="Product" asp-action="Catalog"  class="nav-link" style="color: white;">Каталог</a></li>
+            <li class="nav-item"><a asp-controller="Product" asp-action="Cart" class="nav-link" style="color: white;">Корзина</a></li>
+            <li class="nav-item"><a asp-controller="RewiewUser" asp-action="Rewiews" class="nav-link" style="color: white;">Отзывы</a></li>
+            <li class="nav-item"><a asp-controller="CRUD" asp-action="vibor" class="nav-link" style="color: white;">CRUD</a></li>
+
         </ul>
     </header>
     <div style="background-color:black" class="container">

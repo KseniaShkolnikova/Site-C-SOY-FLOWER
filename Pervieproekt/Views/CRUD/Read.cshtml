@@ -1,0 +1,20 @@
+﻿@model Pervieproekt.Models.Catalogg
+
+@{
+    ViewBag.Title = Model.Namee;
+}
+
+<h2> @Model.Namee</h2>
+<div>
+    <dl>
+        <dt>Цена</dt>
+        <dd>@Model.Price</dd>
+
+        <dt>Информация</dt>
+        <dd>@Model.Information</dd>
+
+        <dt>Картинка</dt>
+        <img src="~/lib/images/@Model.Img" alt="..." style="width:20%">
+
+    </dl>
+</div>

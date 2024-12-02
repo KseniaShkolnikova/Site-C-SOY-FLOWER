@@ -201,6 +201,10 @@
       "PackagePath": "staticwebassets\\lib\\images\\asian-food.jpg"
     },
     {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\back.avif",
+      "PackagePath": "staticwebassets\\lib\\images\\back.avif"
+    },
+    {
       "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (1).png",
       "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (1).png"
     },
@@ -211,6 +215,30 @@
     {
       "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (3).png",
       "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (3).png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (4).png",
+      "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (4).png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (5).png",
+      "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (5).png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (6).png",
+      "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (6).png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\pngwing.com (7).png",
+      "PackagePath": "staticwebassets\\lib\\images\\pngwing.com (7).png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\seafood-sushi-dish-with-details-simple-black-background.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\seafood-sushi-dish-with-details-simple-black-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\images\\top-view-sushi-rolls-slate-with-copy-space.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\top-view-sushi-rolls-slate-with-copy-space.jpg"
     },
     {
       "Id": "C:\\Users\\user1\\source\\repos\\Pervieproekt\\Pervieproekt\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",

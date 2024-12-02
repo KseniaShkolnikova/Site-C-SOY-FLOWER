@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Pervieproekt.Models.Catalogg>
+@{
+    ViewBag.Title = "fghj";
+}
+<a asp-action="Create">Добавить</a>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Namee</td>
+            <td>
+            <a asp-controller="CRUD" asp-action="Update" asp-route-id="@item.IdCatalog" class="nav-link" style="color: white;">Обновить</a>
+            <a asp-controller="CRUD" asp-action="Delete" asp-route-id="@item.IdCatalog" class="nav-link" style="color: white;">Удалить</a>
+            <a asp-controller="CRUD" asp-action="Read" asp-route-id="@item.IdCatalog" class="nav-link" style="color: white;">Вывести</a>
+            </td>
+        </tr>
+
+    }
+</table>

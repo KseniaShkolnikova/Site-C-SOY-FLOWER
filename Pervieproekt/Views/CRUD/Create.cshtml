@@ -1,0 +1,28 @@
+﻿@model Pervieproekt.Models.Catalogg
+@{
+	ViewBag.Title = "CRUD";
+}
+<form asp-action="Create" asp-controller="CRUD">
+	<div>
+		<label asp-for="Namee">Название товара</label>
+		<input type="text" asp-for="Namee"/>
+	</div>
+	<div>
+		<label asp-for="Price">Цена товара</label>
+		<input type="number" asp-for="Price" />
+
+	</div>
+	<div>
+		<label asp-for="Img">Картинка</label>
+		<input type="text" asp-for="Img" />
+
+	</div>
+	<div>
+		<label asp-for="Information">Информация о товаре</label>		
+		<input type="text" asp-for="Information" />
+
+	</div>
+	<div>
+		<input type="submit" value="Отправить"/>
+	</div>
+</form>

@@ -1,0 +1,216 @@
+﻿@model IEnumerable<Pervieproekt.Models.Catalogg>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .catalog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #2c2c2c; 
+            border: 1px solid #444; 
+            border-radius: 8px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .product-card:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+        .filter-sort-container {
+            display: flex;
+            gap: 20px;
+            align-items: center; 
+            align-content: end;
+            padding: 20px 30px;
+            background-color: #2c2c2c;
+            color: #fff;
+            width: 100%;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            align-content:end;
+            flex-grow: 1; 
+        }
+
+            .search-container input {
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #444;
+                flex-grow: 1; 
+            }
+
+            .search-container button {
+                padding: 12px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #444;
+                background-color: #911300;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .search-container button:hover {
+                    background-color: #a6372a;
+                }
+
+        .filter-sort-container select,
+        .filter-sort-container button {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #444;
+            color: #fff;
+            width: 200px; 
+        }
+
+        .filter-sort-container button {
+            cursor: pointer;
+            background-color: #911300;
+            transition: background-color 0.3s ease;
+        }
+
+            .filter-sort-container button:hover {
+                background-color: #a6372a;
+            }
+
+
+
+        .product-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #444;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+            .product-info h2 {
+                font-size: 22px;
+                color: #fff;
+                margin-bottom: 10px;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+            }
+
+            .product-info .price {
+                font-size: 24px; 
+                color: #fff; 
+                font-weight: bold;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+            }
+
+            .product-info .number {
+                width: 50px;
+                padding: 5px;
+                margin-right: 10px;
+                background-color: #444;
+                color: white;
+                border: 1px solid #444;
+                border-radius: 5px;
+                font-size: 14px;
+                height: 40px; 
+                text-align: center;
+            }
+
+            .product-info .button {
+                background-color: #911300;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                height: 40px; 
+                display: flex;
+                align-items: center; 
+                justify-content: center; 
+            }
+
+                .product-info .button:hover {
+                    background-color: #a6372a;
+                }
+
+        .add-to-cart-container {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="filter-sort-container">
+        <div class="search-container">
+        <form asp-action="Catalog" method="get">
+            <input type="text" name="search" placeholder="Поиск ..." />
+            <button type="submit">Поиск</button>
+        </form>
+        </div>
+
+        <form asp-action="Catalog" method="get">
+            <select name="productType" onchange="this.form.submit()">
+                <option value="">Все типы</option>
+                @foreach (var type in ViewBag.ProductTypes as List<string>)
+                {
+                    <option value="@type">@type</option>
+                }
+            </select>
+        </form>
+
+        <form asp-action="Catalog" method="get">
+            <select name="sort" onchange="this.form.submit()">
+                <option value="">Сортировка</option>
+                <option value="price_asc">По цене (возрастанию)</option>
+                <option value="price_desc">По цене (убыванию)</option>
+            </select>
+        </form>
+    </div>
+    <div class="catalog-container">
+        @foreach (var i in Model){
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <a asp-action="Information" asp-controller="Product">
+                        <img src="~/lib/images/@i.Img" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <h2>@i.Namee</h2>
+                    <div class="price">@i.Price руб</div>
+                    <div class="add-to-cart-container">
+                        <form asp-action="AddToCart" method="post" style="display: flex; align-items: center;">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="productId" value="@i.IdCatalog" />
+                            <input type="number" class="number" name="quantiti" value="1" min="1" max="100" />
+                            <button class="button">Добавить в корзину</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

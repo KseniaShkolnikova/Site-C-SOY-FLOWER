@@ -1,0 +1,160 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/lib/images/seafood-sushi-dish-with-details-simple-black-background.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            max-width: 1000px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 10px solid #911300;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-side {
+            flex: 1;
+            padding: 20px;
+        }
+
+            .image-side img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+        .form-side {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white; /* Text color for better contrast */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+            .input-container label {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 5px;
+                color: white;
+            }
+
+            .input-container input {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                outline: none;
+                background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            }
+
+                .input-container input:focus {
+                    border-color: white;
+                }
+
+        .links {
+            text-align: left;
+            margin-bottom: 10px;
+            margin-top:10px;
+        }
+
+            .links a {
+                font-size: 14px;
+                color: white;
+                text-decoration: none;
+            }
+
+                .links a:hover {
+                    text-decoration: underline;
+                }
+
+        .submit-btn {
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            background-color: #911300;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .submit-btn:hover {
+                background-color: #690e00;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-side">
+            <img src="/lib/images/pngwing.com (7).png" alt="Картинка авторизации">
+        </div>
+        <div class="form-side">
+            <form  method="post">
+                <h2>Авторизация</h2>
+                <div class="input-container">
+                    <label for="name">Имя</label>
+                    <input type="text" name="name" placeholder="Введите логин" required>
+                </div>
+                <div class="input-container">
+                    <label for="mail">Пароль</label>
+                    <input type="text" name="mail" placeholder="Введите пароль" required>
+                </div>
+                <div class="input-container">
+                    <label for="login">Пароль</label>
+                    <input type="text" name="login" placeholder="Введите пароль" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" placeholder="Введите пароль" required>
+                </div>
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    @ViewBag.ErrorMessage
+                    ;
+                }
+                <button type="submit" style="width:100%" class="submit-btn">Зарегистрироваться</button>
+                <div class="links">
+                    <a asp-action="Enter" asp-controller="Autorization">Уже есть аккаунт</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

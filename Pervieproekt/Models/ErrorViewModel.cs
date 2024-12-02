@@ -6,4 +6,5 @@ namespace Pervieproekt.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+
 }

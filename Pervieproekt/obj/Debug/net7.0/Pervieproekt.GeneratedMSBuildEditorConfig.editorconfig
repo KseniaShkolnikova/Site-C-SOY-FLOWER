@@ -16,24 +16,56 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user1\source\repos\Pervieproekt\Pervieproekt
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Home/Cart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Autorization/Enter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JpemF0aW9uXEVudGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Home/Catalog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRhbG9nLmNzaHRtbA==
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Autorization/Regist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JpemF0aW9uXFJlZ2lzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/CRUD/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1JVRFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/CRUD/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1JVRFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/CRUD/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1JVRFxSZWFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/CRUD/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1JVRFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/CRUD/vibor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1JVRFx2aWJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Home/Information.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmZvcm1hdGlvbi5jc2h0bWw=
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Product/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Home/Payment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50LmNzaHRtbA==
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Product/Catalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXRhbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Product/Information.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmZvcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Product/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/RewiewUser/Rewiews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV3aWV3VXNlclxSZXdpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user1/source/repos/Pervieproekt/Pervieproekt/Views/Shared/Error.cshtml]

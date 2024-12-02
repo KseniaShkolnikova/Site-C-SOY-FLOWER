@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление заказа</title>
+    <style>
+
+
+        .container {
+            display: flex;
+            width: 90%;
+        }
+
+        .image-container {
+            width: 30%;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; /* Выделение заголовков */
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .card-info {
+            display: none; /* Скрыть поля для карты по умолчанию */
+        }
+
+        .btn {
+            background-color: #911300; /* Красная кнопка */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #911300;
+            }
+
+        .vertical-line { /* Добавляем стиль для вертикальной линии */
+            width: 1px;
+            height: 825px; /*  Высота линии */
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="@Url.Content("~/lib/images/pngwing.com (1).png")" style="width:120%;margin-left:-150px"/>
+        </div>
+        <div class="vertical-line" style="margin-left:-90px"></div>
+
+        <div class="form-container" style="margin-left:200px">
+            <h1>Оформление заказа</h1>
+            <h2>Ваши товары</h2>
+
+<div class="form-group">
+      <label for="payment-method">Способ оплаты:</label><br>
+      <input type="radio" name="payment-method" id="cash" value="cash" checked>
+      <label for="cash">Наличные</label><br>
+      <input type="radio" name="payment-method" id="card" value="card">
+      <label for="card">Карта</label>
+    </div>
+
+    <div class="card-info form-group"> 
+      <label for="card-number">Номер карты:</label>
+      <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
+    </div>
+
+    <div class="card-info form-group">
+      <label for="expiry-date">Срок действия:</label>
+      <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+    </div>
+
+    <div class="card-info form-group">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="XXX">
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Комментарий:</label>
+      <textarea id="comment" name="comment" placeholder="Введите ваш комментарий"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="delivery-address">Адрес доставки:</label>
+      <input type="text" id="delivery-address" name="delivery-address" placeholder="Введите ваш адрес">
+    </div>
+
+    <button class="btn" type="submit">Оформить заказ</button>
+  </div>
+</div>
+
+<script>
+  const paymentMethodRadios = document.querySelectorAll('input[name="payment-method"]');
+  const cardInfoFields = document.querySelectorAll('.card-info'); // Изменили селектор
+
+  paymentMethodRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'card') {
+        cardInfoFields.forEach(field => { 
+          field.style.display = 'block'; // Добавлено для каждого поля
+        });
+      } else {
+        cardInfoFields.forEach(field => {
+          field.style.display = 'none'; 
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+

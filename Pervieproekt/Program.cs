@@ -1,7 +1,31 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Pervieproekt.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Pervieproekt.Models.SushiStoreContext>(option => 
+option.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Autorization/Enter";
+        options.AccessDeniedPath = "/Home/Index";
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("CustomerPolicy", policy =>
+        policy.RequireRole("Customer"));
+});
+
+
 
 var app = builder.Build();
 
@@ -18,10 +42,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Autorization}/{action=Enter}/{id?}");
+
 
 app.Run();
