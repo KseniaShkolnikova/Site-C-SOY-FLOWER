@@ -164,10 +164,11 @@
 <body>
 <div class="filter-sort-container">
         <div class="search-container">
-        <form asp-action="Catalog" method="get">
-            <input type="text" name="search" placeholder="Поиск ..." />
-            <button type="submit">Поиск</button>
-        </form>
+            <form asp-action="Catalog" method="get">
+                <input type="text" name="search" placeholder="Поиск ..." />
+                <button type="submit">Поиск</button>
+            </form>
+
         </div>
 
         <form asp-action="Catalog" method="get">
@@ -180,13 +181,16 @@
             </select>
         </form>
 
+
+
         <form asp-action="Catalog" method="get">
             <select name="sort" onchange="this.form.submit()">
                 <option value="">Сортировка</option>
-                <option value="price_asc">По цене (возрастанию)</option>
-                <option value="price_desc">По цене (убыванию)</option>
+                <option value="price_vverh">По цене (возрастанию)</option>
+                <option value="price_vniz">По цене (убыванию)</option>
             </select>
         </form>
+
     </div>
     <div class="catalog-container">
         @foreach (var i in Model){

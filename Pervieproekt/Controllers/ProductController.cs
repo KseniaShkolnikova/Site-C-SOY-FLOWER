@@ -19,32 +19,38 @@ namespace Pervieproekt.Controllers
         }
         public IActionResult Catalog(string search, string productType, string sort)
         {
-            var productTypes = db.ProductTypes.Select(pt => pt.TypeName).ToList();
-            var productsQuery = db.Cataloggs.AsQueryable();
+            var productTypes = db.ProductTypes.Select(pt => pt.TypeName).ToList(); 
+            var product = db.Cataloggs.AsQueryable(); 
+
             if (!string.IsNullOrEmpty(search))
             {
-                productsQuery = productsQuery.Where(p => p.Namee.Contains(search));
+                product = product.Where(p => p.Namee.Contains(search)); 
             }
+
             if (!string.IsNullOrEmpty(productType))
             {
-                productsQuery = productsQuery.Where(p => p.ProductType.TypeName == productType);
+                product = product.Where(p => p.ProductType.TypeName == productType); 
             }
+
             switch (sort)
             {
-                case "price_asc":
-                    productsQuery = productsQuery.OrderBy(p => p.Price);
+                case "price_vverh":
+                    product = product.OrderBy(p => p.Price); 
                     break;
-                case "price_desc":
-                    productsQuery = productsQuery.OrderByDescending(p => p.Price);
+                case "price_vniz":
+                    product = product.OrderByDescending(p => p.Price);
                     break;
                 default:
-                    productsQuery = productsQuery.OrderBy(p => p.Namee); 
                     break;
             }
-            var products = productsQuery.ToList();
+
+            var products = product.ToList(); 
             ViewBag.ProductTypes = productTypes; 
-            return View(products);
+
+            return View(products); 
         }
+
+
         public IActionResult Information()
         {
             return View();
@@ -70,11 +76,9 @@ namespace Pervieproekt.Controllers
         }
         public async Task<IActionResult> AddCount(int productId, int quantiti)
         {
-            var userid = User.Identity?.Name;
             var product = await db.PosOrders.FindAsync(productId);
-            var cartItem = await db.PosOrders.FirstOrDefaultAsync(c => c.IdPosOrders == productId && c.UserrId == userid);
-            cartItem.Countt = quantiti;
-            cartItem.Price = (decimal)(cartItem.Countt * product.Price);
+            product.Countt = quantiti;
+            product.Price = (decimal)(product.Countt * product.Price);
             await db.SaveChangesAsync();
             return RedirectToAction("Cart", "Product");
 
@@ -118,15 +122,12 @@ namespace Pervieproekt.Controllers
             {
                 return RedirectToAction("Regist", "Autorization");
             }
-
             var product = await db.Cataloggs.FindAsync(productid);
             if (product == null)
             {
                 return NotFound("Продукт не найден");
             }
-
             var cartItem = await db.PosOrders.FirstOrDefaultAsync(c => c.CatalogId == productid && c.UserrId == userid);
-
             if (cartItem == null)
             {
                 cartItem = new PosOrder

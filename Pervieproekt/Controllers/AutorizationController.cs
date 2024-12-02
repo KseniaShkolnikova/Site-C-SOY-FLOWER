@@ -78,7 +78,7 @@ namespace Pervieproekt.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Catalog", "Product");
+            return RedirectToAction("Enter", "Autorization");
         }
     }
 }
